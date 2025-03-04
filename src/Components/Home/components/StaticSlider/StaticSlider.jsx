@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../../../../Context/ThemeContext/ThemeContext";
 import Slider from "react-slick";
-import slider1 from "../../../../assets/images/slider1.JPEG";
-import slider2 from "../../../../assets/images/slider2.JPEG";
-import slider3 from "../../../../assets/images/slider3.JPEG";
-import static1 from "../../../../assets/images/static1.JPEG";
-import static2 from "../../../../assets/images/static2.JPEG";
+import slider1 from "../../../../assets/images/slider1.jpeg";
+import slider2 from "../../../../assets/images/slider2.jpeg";
+import slider3 from "../../../../assets/images/slider3.jpeg";
+import static1 from "../../../../assets/images/static1.jpeg";
+import static2 from "../../../../assets/images/static2.jpeg";
 
 export default function StaticSlider() {
   const { darkMode } = useContext(ThemeContext);
