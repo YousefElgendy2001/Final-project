@@ -57,9 +57,9 @@ const routes = createBrowserRouter([
   ]}
 ])
   return (
-    <RouterProvider router={routes}>
+    <RouterProvider router={routes}/>
      
-    </RouterProvider>
+   
   )
 }
 

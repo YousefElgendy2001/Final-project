@@ -4,98 +4,143 @@
 @tailwind components;
 @tailwind utilities;
 
-/* You can add global styles to this file, and also import other style files */
-
-:root
-{
-    --main-color:#0aad0a;
-    --light-color:#f0f3f2;
-    --shadow: rgba(145,158,171,.2) 0px 2px 4px -1px,rgba(145,158,171,.14) 0px 4px 5px 0px,rgba(145,158,171,.12) 0px 1px 10px 0px;
-    --font-family:'Encode Sans Expanded', sans-serif;
-    --rating-color:#ffc908;
+:root {
+    --main-color: #0aad0a;
+    --light-color: #f0f3f2;
+    --shadow: rgba(145,158,171,.2) 0px 2px 4px -1px,
+              rgba(145,158,171,.14) 0px 4px 5px 0px,
+              rgba(145,158,171,.12) 0px 1px 10px 0px;
+    --font-family: 'Encode Sans Expanded', sans-serif;
+    --rating-color: #ffc908;
 }
 
-body{
+body {
     font-family: var(--font-family) !important;
-    
+    transition: background-color 0.3s, color 0.3s;
 }
-.rating-color
-{
+
+/* تحسين الـ Dark Mode */
+.dark {
+    background-color: #1a202c;
+    color: #f7fafc;
+}
+
+.rating-color {
     color: var(--rating-color);
 }
-.cursor-pointer
-{
+
+.cursor-pointer {
     cursor: pointer;
 }
-a , a:hover{
-    color: black;
+
+/* تحسين الروابط */
+a, a:hover {
     text-decoration: none;
+    transition: color 0.3s;
 }
 
-.product .btn 
-{
-    transition: transform 1s , opacity 1s;
-    transform: translateY(100%);
-    opacity: 0;
-}
-.brand .btn 
-{
-    transition: transform 1s , opacity 1s;
-    transform: translateY(100%);
-    opacity: 0;
-}
-.category .btn 
-{
-    transition: transform 1s , opacity 1s;
-    transform: translateY(100%);
-    opacity: 0;
-}
-.product:hover .btn 
-{
-    opacity: 1;
-    transform: translateY(0%);
-
-}
-.brand:hover .btn 
-{
-    opacity: 1;
-    transform: translateY(0%);
-
-}
-.category:hover .btn 
-{
-    opacity: 1;
-    transform: translateY(0%);
-
-}
-.font-sm
-{
-    font-size: 14px;
-}
-.text-main
-{
+a:hover {
     color: var(--main-color);
 }
-.bg-main
-{
+
+/* تحسين تأثير الزرار وتوحيده لكل العناصر */
+.btn-hover-effect {
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.product:hover, .brand:hover, .category:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* لما يحصل hover على العنصر يظهر الزرار */
+.product:hover .btn-hover-effect,
+.brand:hover .btn-hover-effect,
+.category:hover .btn-hover-effect {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+/* تحسين عرض المنتج */
+.product, .brand, .category {
+    transition: all 0.3s ease-in-out;
+}
+
+/* تحسين التأثير عند hover على المنتج */
+.product:hover, .brand:hover, .category:hover {
+    transform: scale(1.03);
+}
+
+/* تحسين النصوص */
+.font-sm {
+    font-size: 14px;
+}
+
+/* تحسين الألوان */
+.text-main {
+    color: var(--main-color);
+}
+.bg-main {
     background-color: var(--main-color) !important;
 }
-.bg-main-light 
-{
+.bg-main-light {
     background-color: var(--light-color) !important;
 }
 
-.active {
-@apply bg-main p-1 text-white;
+/* تحسين التصميم في الوضع الداكن */
+.dark .product {
+    background-color: #2d3748;
+    color: #e2e8f0;
+}
+.dark .product h2 {
+    color: #f7fafc;
+}
+.dark .btn {
+    background-color: var(--main-color);
+    color: white;
+}
+.dark .btn:hover {
+    background-color: #099109;
 }
 
-.main-layout{
+/* تحسين التخطيط */
+.main-layout {
     @apply flex flex-wrap gap-y-3;
-} 
+}
+
+/* تحسين عرض الصور */
 .category-image {
-    width: 100%; 
-    height: 200px; 
-    object-fit: cover; 
-    border-radius: 8px; 
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+      /* !✅ Styling for dark mode dots */
+
+
+/*Light Mode */
+.slick-dots.light-dots li button:before {
+    color: #333 !important; /* لون الدوتس الأسود */
+    opacity: 1 !important;
   }
+  
+  .slick-dots.light-dots li.slick-active button:before {
+    color: #ff6600 !important; /* لون الدوتس عند التفعيل */
+  }
+  
+  /* ✅ لون الدوتس في الـ Dark Mode */
+  .slick-dots.dark-dots li button:before {
+    color: #ddd !important; /* لون الدوتس الفاتح */
+    opacity: 1 !important;
+  }
+  
+  .slick-dots.dark-dots li.slick-active button:before {
+    color: #ffcc00 !important; /* لون الدوتس عند التفعيل */
+  }
+  
+
   

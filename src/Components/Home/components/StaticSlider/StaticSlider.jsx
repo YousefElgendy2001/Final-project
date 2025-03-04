@@ -1,0 +1,57 @@
+import React, { useContext } from "react";
+import { ThemeContext } from "../../../../Context/ThemeContext/ThemeContext";
+import Slider from "react-slick";
+import slider1 from "../../../../assets/images/slider1.JPEG";
+import slider2 from "../../../../assets/images/slider2.JPEG";
+import slider3 from "../../../../assets/images/slider3.JPEG";
+import static1 from "../../../../assets/images/static1.JPEG";
+import static2 from "../../../../assets/images/static2.JPEG";
+
+export default function StaticSlider() {
+  const { darkMode } = useContext(ThemeContext);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000, 
+    adaptiveHeight: true,
+    appendDots: (dots) => (
+      <div className="p-2">
+        <ul className="flex justify-center space-x-2">{dots}</ul>
+      </div>
+    ),
+    dotsClass: `slick-dots ${darkMode ? "dark-dots" : "light-dots"}`
+  };
+
+  return (
+    <div className="container mx-auto my-8">
+      <div className="grid grid-cols-12 gap-4">
+        {/* ✅ السليدر ياخد 9/12 من عرض الشاشة */}
+        <div className="col-span-12 md:col-span-9">
+          <Slider {...settings}>
+            <div>
+              <img src={slider1} alt="Slide 1" className="w-full h-64 object-cover rounded-lg" />
+            </div>
+            <div>
+              <img src={slider2} alt="Slide 2" className="w-full h-64 object-cover rounded-lg" />
+            </div>
+            <div>
+              <img src={slider3} alt="Slide 3" className="w-full h-64 object-cover rounded-lg" />
+            </div>
+          </Slider>
+        </div>
+
+        {/* ✅ الصور الثابتة بجانب السليدر (3/12 من العرض) */}
+        <div className="col-span-12 md:col-span-3 flex flex-col  gap-4">
+          <img src={static1} alt="Static 1" className="w-full h-32 object-cover rounded-lg" />
+          <img src={static2} alt="Static 2" className="w-full h-32 object-cover rounded-lg" />
+        </div>
+      </div>
+    </div>
+  );
+}

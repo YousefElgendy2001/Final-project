@@ -1,29 +1,35 @@
-import React, { useState , useEffect } from 'react'
-import styles from './CategoryItem.module.css' 
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { ThemeContext } from '../../../Context/ThemeContext/ThemeContext';
 
 export default function CategoryItem(props) {
-   
-    let {image ,name,slug,_id} =props.category
-    return (
-      <div className="w-1/6 px-3 mb-20">
-      <div className="category">
-      <Link to={`/categoryDetails/${_id}`}>
-      <img src={image} alt={""} className="category-image" />
+  const { darkMode } = useContext(ThemeContext);
 
-       
-        <h2 className='mb-4 text-main'>{name}</h2>
-       <p className=''>{slug}</p>
-       <div className="flex justify-end">
-        <p>
-          <i className='fa fa-star rating-color py-2'></i>4.8
-       </p>
+  const { image, name, slug, _id } = props.category;
+
+  return (
+    <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-2 mb-3">
+      <div className="product p-3 bg-white dark:bg-gray-800 shadow-lg rounded-lg transition-all">
+        <Link to={`/categoryDetails/${_id}`}>
+          <img 
+            src={image} 
+            alt={name} 
+            className="mb-4 w-full h-40 object-cover rounded-md" 
+          />
+          <h2 className="text-main">{name}</h2>
+          <p className="mb-4 font-bold" style={{ color: darkMode ? "white" : "black" }}>
+            {slug}
+          </p>
+          <div className="flex justify-between mb-5 text-gray-700 dark:text-gray-300">
+            <p>
+              <i className="fa fa-star rating-color"></i> 4.3
+            </p>
+          </div>
+        </Link>
+        <button className="btn-hover-effect bg-main text-center w-full p-2 text-white rounded-md">
+          ADD To Cart
+        </button>
       </div>
-       </Link>
-        <button className='btn bg-main text-center w-full p-2 text-white rounded-md'>ADD To Cart</button>
-      </div>
-      
-      
-      </div>
-    )
+    </div>
+  );
 }

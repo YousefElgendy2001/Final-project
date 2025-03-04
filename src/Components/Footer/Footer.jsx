@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import styles from "./Footer.module.css";
 
+
 export default function Footer() {
+
+
 
 
 
@@ -10,7 +13,7 @@ export default function Footer() {
     <>
     
     
-    <footer className="bg-[rgb(242,242,242)]  p-6 ">
+    <footer className="bg-[rgb(242,242,242)]  p-4 text-center text-black dark:bg-gray-900 dark:text-white ">
   <div className="container max-w-screen-xl mx-auto">
     <h2 className="text-3xl text-[#212529]">Get the Fresh Cart App</h2>
     <p className="text-[#6d767e] mb-4 font-light">
