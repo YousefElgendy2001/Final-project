@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import Logo from "../../assets/images/freshcart-logo.svg";
+import Logo from "../../../public/images/freshcart-logo.svg";
 import { tokenContext } from "../../Context/TokenContext/TokenContext";
 import { ThemeContext } from "../../Context/ThemeContext/ThemeContext";
 
