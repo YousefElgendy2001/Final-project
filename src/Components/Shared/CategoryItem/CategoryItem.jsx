@@ -20,16 +20,33 @@ export default function CategoryItem(props) {
           <p className="mb-4 font-bold" style={{ color: darkMode ? "white" : "black" }}>
             {slug}
           </p>
-          <div className="flex justify-between mb-5 text-gray-700 dark:text-gray-300">
+          <div className="flex justify-end mb-5 text-gray-700 dark:text-gray-300">
             <p>
               <i className="fa fa-star rating-color"></i> 4.3
             </p>
           </div>
         </Link>
-        <button className="btn-hover-effect bg-main text-center w-full p-2 text-white rounded-md">
-          ADD To Cart
-        </button>
+       
       </div>
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -21,6 +21,7 @@ import { tokenContext } from './Context/TokenContext/TokenContext'
 
 import { useEffect } from 'react'
 import AuthView from './Components/Auth/AuthView'
+import { ToastContainer } from 'react-toastify'
 
 
 
@@ -57,8 +58,12 @@ const routes = createBrowserRouter([
   ]}
 ])
   return (
+    <>
     <RouterProvider router={routes}/>
-     
+    
+    <ToastContainer />
+    
+    </>
    
   )
 }

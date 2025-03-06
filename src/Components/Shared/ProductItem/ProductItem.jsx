@@ -22,7 +22,7 @@ export default function ProductItem(props) {
             </p>
           </div>
         </Link>
-        <button className="btn-hover-effect bg-main text-center w-full p-2 text-white rounded-md">
+            <button  onClick={()=>props.addProductToCart(id)} className="btn-hover-effect bg-main text-center w-full p-2 text-white rounded-md">
           ADD To Cart
         </button>
       </div>

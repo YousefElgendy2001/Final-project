@@ -44,12 +44,12 @@ const [loading, setLoading] = useState(true);
     <div className="w-8/12">
     <h1 className=''>{BrandDetails?.name}</h1>
   <span className="text-main">{BrandDetails?.slug}</span>
-  <div className="flex justify-end">
+  <div className="flex justify-end mx-20">
     <p>
       <i className='fa fa-star rating-color py-2'></i>4.8
       {BrandDetails?.ratingsAverage}</p>
   </div>
-  <button className=' bg-main text-center w-full p-2 text-white rounded-md'>ADD To Cart</button>
+ 
 
     </div>
   </div>

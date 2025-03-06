@@ -3,7 +3,6 @@ import styles from "./RecentCategory.module.css";
 import axios from "axios";
 import CategoryItem from "../../../Shared/CategoryItem/CategoryItem";
 import Loader from "../../../Shared/Loader/Loader";
-
 export default function RecentCategory() {
 
 

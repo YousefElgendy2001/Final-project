@@ -8,9 +8,9 @@ import LoaderDetails from '../Shared/LoaderDetails/LoaderDetails';
 export default function CategoryDetails() {
     const [categoryDetails, setCategoryDetails] = useState()
     const [loading, setLoading] = useState(true);
-    let {id,categoryId} = useParams()
+    let {id} = useParams()
     console.log(id);
-    console.log(categoryId,"categoryId");
+  
 
 
    async function getCategoryDetails() {
@@ -49,10 +49,10 @@ export default function CategoryDetails() {
   <span className="text-main">{categoryDetails?.slug}</span>
   <div className="flex justify-end">
     <p>
-      <i className='fa fa-star rating-color py-2'></i>4.8
-      {categoryDetails?.ratingsAverage}</p>
+      <i className='fa fa-star rating-color py-2'></i>4.3
+     </p>
   </div>
-  <button className=' bg-main text-center w-full p-2 text-white rounded-md'>ADD To Cart</button>
+
 
     </div>
   </div>
